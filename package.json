@@ -1,0 +1,23 @@
+{
+    "name": "com.hypergnosys.core",
+    "version": "1.0.0",
+    "displayName": "HGCodeBaseCore",
+    "description": "Base classes and scripts for HyperGnosys modules",
+    "unity": "2020.3",
+    "unityRelease": "11f1",
+    "documentationUrl": "https://github.com/Rahgnoruk/HGCodeBaseCore",
+    "changelogUrl": "https://github.com/Rahgnoruk/HGCodeBaseCore",
+    "licensesUrl": "https://github.com/Rahgnoruk/HGCodeBaseCore",
+    "keywords": [
+      "HyperGnosys",
+      "Code Base",
+      "Core"
+    ],
+    "author": {
+      "name": "Sergio Raimond",
+      "email": "sergio.raimond@hypergnosys.com",
+      "url": "https://www.hypergnosys.com"
+    },
+    "dependencies": {
+    }
+  }
