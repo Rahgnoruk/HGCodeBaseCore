@@ -2,7 +2,7 @@
 
 namespace HyperGnosys.Core
 {
-    public interface PropertyInterface<ContainedType>
+    public interface IObservableProperty<ContainedType>
     {
         ContainedType Value { get; set; }
         void AddListener(IGameEventListener<ContainedType> listener);

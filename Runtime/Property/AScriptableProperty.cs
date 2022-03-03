@@ -8,7 +8,7 @@ namespace HyperGnosys.Core
     /// ScriptableEvents y conectalos con onGlobalPropertyReassigned.
     /// </summary>
     /// <typeparam name="ContainedType"></typeparam>
-    public abstract class AScriptableProperty<ContainedType> : ScriptableObject, PropertyInterface<ContainedType>
+    public abstract class AScriptableProperty<ContainedType> : ScriptableObject, IObservableProperty<ContainedType>
     {
         [SerializeField] private bool debugging = false;
         [Space]

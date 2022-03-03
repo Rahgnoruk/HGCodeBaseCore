@@ -13,7 +13,7 @@ namespace HyperGnosys.Core
     /// y que se puedan hacer cosas como suscribirse al evento que tienen todas las AProperties
     /// </typeparam>
     public abstract class APropertyComponent<ContainedType>
-        : MonoBehaviour, PropertyInterface<ContainedType>
+        : MonoBehaviour, IObservableProperty<ContainedType>
     {
         [SerializeField] private bool debugging = false;
         [Space]

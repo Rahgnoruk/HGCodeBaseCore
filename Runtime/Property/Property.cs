@@ -14,7 +14,7 @@ namespace HyperGnosys.Core
     /// <typeparam name="ContainedTypeEventReference"></typeparam>
     /// RECUERDA MARCAR SERIALIZABLES LAS CLASES QUE HEREDEN
     [Serializable]
-    public class Property <ContainedType> : PropertyInterface<ContainedType>
+    public class Property <ContainedType> : IObservableProperty<ContainedType>
     {
 
         [SerializeField] private bool debugging = false;
@@ -33,8 +33,8 @@ namespace HyperGnosys.Core
             "\n\nIf the externalProperty is set, the localProperty will be ignored, including the localPropertyReassigned Event. " +
             "\n\nThe external object should be a Monobehaviour or a ScriptableObject. " +
             "\nWhichever it is, it has to implement PropertyInterface. There are many premade components in Attributes.")]
-        [SerializeField] private ExternalReference<PropertyInterface<ContainedType>> externalProperty
-            = new ExternalReference<PropertyInterface<ContainedType>>();
+        [SerializeField] private ExternalReference<IObservableProperty<ContainedType>> externalProperty
+            = new ExternalReference<IObservableProperty<ContainedType>>();
         
 
         public virtual ContainedType Value
