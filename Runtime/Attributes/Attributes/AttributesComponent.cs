@@ -1,6 +1,6 @@
 namespace HyperGnosys.Core
 {
-    public class AttributesComponent : APropertyComponent<Attributes>
+    public class AttributesComponent : AObservablePropertyComponent<Attributes>
     {
         public Attribute<AttributeType> GetAttribute<AttributeType>(AttributeTag attributeTag)
         {

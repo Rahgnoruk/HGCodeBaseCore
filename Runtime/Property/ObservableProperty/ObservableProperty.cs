@@ -6,35 +6,33 @@ namespace HyperGnosys.Core
     [System.Serializable]
     public class ObservableProperty<ContainedType> : IObservableProperty<ContainedType>
     {
-        [SerializeField] private ContainedType localProperty;
-        [SerializeField] private GameEvent<ContainedType> onLocalPropertyReassigned = new GameEvent<ContainedType>();
+        [SerializeField] private ContainedType value;
+        [SerializeField] private GameEvent<ContainedType> onValueChanged = new GameEvent<ContainedType>();
         public ContainedType Value
         {
-            get => localProperty;
+            get => value;
             set
             {
-                this.localProperty = value;
-                onLocalPropertyReassigned?.Raise(value);
+                this.value = value;
+                onValueChanged?.Raise(value);
             }
         }
 
         public void AddListener(IGameEventListener<ContainedType> listener)
         {
-            onLocalPropertyReassigned.AddListener(listener);
-            listener.OnEventRaised(localProperty);
+            onValueChanged.AddListener(listener);
         }
         public void RemoveListener(IGameEventListener<ContainedType> listener)
         {
-            onLocalPropertyReassigned.RemoveListener(listener);
+            onValueChanged.RemoveListener(listener);
         }
         public void AddListener(UnityAction<ContainedType> listener)
         {
-            onLocalPropertyReassigned.AddListener(listener);
-            listener(localProperty);
+            onValueChanged.AddListener(listener);
         }
         public void RemoveListener(UnityAction<ContainedType> listener)
         {
-            onLocalPropertyReassigned.RemoveListener(listener);
+            onValueChanged.RemoveListener(listener);
         }
     }
 }

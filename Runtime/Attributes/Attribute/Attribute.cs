@@ -4,7 +4,7 @@ using UnityEngine;
 namespace HyperGnosys.Core
 {
     [Serializable]
-    public class Attribute<AttributeType> : Property<AttributeType>
+    public class Attribute<AttributeType> : ExternalizableProperty<AttributeType>
     {
         [SerializeField] private AttributeTag tag;
 
