@@ -5,14 +5,14 @@ using UnityEngine;
 namespace HyperGnosys.Core
 {
     [Serializable]
-    public class AttributeList<AttributeType>
+    public class TaggedPropertyGroup<AttributeType>
     {
         [SerializeField] private Type itemType = typeof(AttributeType);
-        [SerializeField] private List<Attribute<AttributeType>> list = new List<Attribute<AttributeType>>();
+        [SerializeField] private List<TaggedProperty<AttributeType>> list = new List<TaggedProperty<AttributeType>>();
 
-        public Attribute<AttributeType> FindAttribute(AttributeTag tag)
+        public TaggedProperty<AttributeType> FindAttribute(PropertyTag tag)
         {
-            foreach(Attribute<AttributeType> attribute in list)
+            foreach(TaggedProperty<AttributeType> attribute in list)
             {
                 if (attribute.Tag.Equals(tag))
                 {
@@ -23,6 +23,6 @@ namespace HyperGnosys.Core
         }
 
         public Type ItemType { get => itemType; set => itemType = value; }
-        public List<Attribute<AttributeType>> List { get => list; set => list = value; }
+        public List<TaggedProperty<AttributeType>> List { get => list; set => list = value; }
     }
 }

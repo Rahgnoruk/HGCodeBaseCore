@@ -6,21 +6,21 @@ namespace HyperGnosys.Core
     [Serializable]
     public class Attributes : IAttributes
     {
-        [SerializeField] private AttributeList<string> stringAttributes;
-        [SerializeField] private AttributeList<float> floatAttributes;
-        [SerializeField] private AttributeList<bool> boolAttributes;
-        [SerializeField] private AttributeList<int> intAttributes;
-        [SerializeField] private AttributeList<double> doubleAttributes;
-        [SerializeField] private AttributeList<Vector3> vector3Attributes;
-        [SerializeField] private AttributeList<GameObject> gameObjectAttributes;
-        public AttributeType GetValue<AttributeType>(AttributeTag attributeTag)
+        [SerializeField] private TaggedPropertyGroup<float> floatAttributes;
+        [SerializeField] private TaggedPropertyGroup<string> stringAttributes;
+        [SerializeField] private TaggedPropertyGroup<bool> boolAttributes;
+        [SerializeField] private TaggedPropertyGroup<int> intAttributes;
+        [SerializeField] private TaggedPropertyGroup<double> doubleAttributes;
+        [SerializeField] private TaggedPropertyGroup<Vector3> vector3Attributes;
+        [SerializeField] private TaggedPropertyGroup<GameObject> gameObjectAttributes;
+        public AttributeType GetValue<AttributeType>(PropertyTag attributeTag)
         {
-            Attribute<AttributeType> attribute = GetAttribute<AttributeType>(attributeTag);
+            TaggedProperty<AttributeType> attribute = GetAttribute<AttributeType>(attributeTag);
             return attribute.Value;
         }
-        public Attribute<AttributeType> GetAttribute<AttributeType>(AttributeTag attributeTag)
+        public TaggedProperty<AttributeType> GetAttribute<AttributeType>(PropertyTag attributeTag)
         {
-            Attribute<AttributeType> attribute = new Attribute<AttributeType>();
+            TaggedProperty<AttributeType> attribute = new TaggedProperty<AttributeType>();
             if(GetAttribute(stringAttributes, attributeTag, ref attribute))
             {
                 return attribute;
@@ -51,14 +51,14 @@ namespace HyperGnosys.Core
             }
             return null;
         }
-        private bool GetAttribute<ListType, AttributeType>(AttributeList<ListType> attributeList,
-            AttributeTag attributeTag, ref Attribute<AttributeType> attribute)
+        private bool GetAttribute<ListType, AttributeType>(TaggedPropertyGroup<ListType> attributeList,
+            PropertyTag attributeTag, ref TaggedProperty<AttributeType> attribute)
         {
             if (attributeList.ItemType != typeof(AttributeType))
             {
                 return false;
             }
-            attribute = attributeList.FindAttribute(attributeTag) as Attribute<AttributeType>;
+            attribute = attributeList.FindAttribute(attributeTag) as TaggedProperty<AttributeType>;
             if (attribute != null)
             {
                 return true;
@@ -66,9 +66,9 @@ namespace HyperGnosys.Core
             return false;
         }
 
-        public bool SetAttributeValue<AttributeType>(AttributeTag attributeTag, AttributeType newValue)
+        public bool SetAttributeValue<AttributeType>(PropertyTag attributeTag, AttributeType newValue)
         {
-            Attribute<AttributeType> attribute = new Attribute<AttributeType>();
+            TaggedProperty<AttributeType> attribute = new TaggedProperty<AttributeType>();
             if (GetAttribute(stringAttributes, attributeTag, ref attribute))
             {
                 attribute.Value = newValue;

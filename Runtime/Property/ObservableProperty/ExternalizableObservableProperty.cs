@@ -4,7 +4,7 @@ using UnityEngine.Events;
 namespace HyperGnosys.Core
 {
     [System.Serializable]
-    public class ExternalizableProperty<ContainedType> : IObservableProperty<ContainedType>
+    public class ExternalizableObservableProperty<ContainedType> : IObservableProperty<ContainedType>
     {
         [SerializeField] private bool debugExternalizableProperty = false;
         [SerializeField] private ObservableProperty<ContainedType> localProperty;

@@ -123,6 +123,91 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &837577143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 837577144}
+  - component: {fileID: 837577145}
+  m_Layer: 0
+  m_Name: TaggedPropertyBehaviour
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &837577144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837577143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &837577145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837577143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ee360d291640e48a08b953d03338c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  someLocalFloatVariable:
+    debugExternalizableTaggedProperty: 0
+    localProperty:
+      value: 0
+      onValueChanged:
+        debugging: 0
+        onEventRaised:
+          m_PersistentCalls:
+            m_Calls: []
+      tag: {fileID: 0}
+    externalProperty:
+      tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
+      propertyGroup: {fileID: 1165527308}
+      taggedProperty:
+        value: 30
+        onValueChanged:
+          debugging: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+        tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
+  someGlobalFloatVariable:
+    debugExternalizableTaggedProperty: 0
+    localProperty:
+      value: 0
+      onValueChanged:
+        debugging: 0
+        onEventRaised:
+          m_PersistentCalls:
+            m_Calls: []
+      tag: {fileID: 0}
+    externalProperty:
+      tag: {fileID: 0}
+      propertyGroup: {fileID: 0}
+      taggedProperty:
+        value: 0
+        onValueChanged:
+          debugging: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+        tag: {fileID: 0}
 --- !u!1 &905739831
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,49 +238,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugging: 0
-  isConstant: 0
   property:
-    stringAttributes:
-      list:
-      - debugging: 0
-        isConstant: 0
-        localProperty: Hero
-        onLocalPropertyReassigned:
-          debugging: 0
-          onEventRaised:
-            m_PersistentCalls:
-              m_Calls: []
-        externalProperty:
-          referenceObject: {fileID: 0}
-        tag: {fileID: 11400000, guid: 45fabaf39f120b746b20894be766c50d, type: 2}
-    floatAttributes:
-      list:
-      - debugging: 0
-        isConstant: 0
-        localProperty: 100
-        onLocalPropertyReassigned:
-          debugging: 0
-          onEventRaised:
-            m_PersistentCalls:
-              m_Calls: []
-        externalProperty:
-          referenceObject: {fileID: 0}
-        tag: {fileID: 11400000, guid: 643622cf4629f974f807157b6df550ce, type: 2}
-    boolAttributes:
-      list: []
-    intAttributes:
-      list: []
-    doubleAttributes:
-      list: []
-    vector3Attributes:
-      list: []
-    gameObjectAttributes:
-      list: []
-  onPropertyValueChanged:
-    debugging: 0
-    onEventRaised:
-      m_PersistentCalls:
-        m_Calls: []
+    value:
+      floatAttributes:
+        list:
+        - value: 0
+          onValueChanged:
+            debugging: 0
+            onEventRaised:
+              m_PersistentCalls:
+                m_Calls: []
+          tag: {fileID: 0}
+      stringAttributes:
+        list:
+        - value: 
+          onValueChanged:
+            debugging: 0
+            onEventRaised:
+              m_PersistentCalls:
+                m_Calls: []
+          tag: {fileID: 0}
+      boolAttributes:
+        list: []
+      intAttributes:
+        list: []
+      doubleAttributes:
+        list: []
+      vector3Attributes:
+        list: []
+      gameObjectAttributes:
+        list: []
+    onValueChanged:
+      debugging: 0
+      onEventRaised:
+        m_PersistentCalls:
+          m_Calls: []
 --- !u!4 &905739833
 Transform:
   m_ObjectHideFlags: 0
@@ -209,4 +286,77 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1165527307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1165527309}
+  - component: {fileID: 1165527308}
+  m_Layer: 0
+  m_Name: FloatProperties
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1165527308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165527307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d7019568b9fca4481ad5f4b3a63d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugging: 0
+  property:
+    value:
+      list:
+      - value: 30
+        onValueChanged:
+          debugging: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+        tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
+      - value: 50
+        onValueChanged:
+          debugging: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+        tag: {fileID: 11400000, guid: 643622cf4629f974f807157b6df550ce, type: 2}
+      - value: 100
+        onValueChanged:
+          debugging: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+        tag: {fileID: 11400000, guid: 84288e5514acdc642a5aacf2a5cb0346, type: 2}
+    onValueChanged:
+      debugging: 0
+      onEventRaised:
+        m_PersistentCalls:
+          m_Calls: []
+--- !u!4 &1165527309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165527307}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
