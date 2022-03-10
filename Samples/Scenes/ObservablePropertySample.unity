@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 18704928}
   - component: {fileID: 18704929}
   m_Layer: 0
-  m_Name: SomeLocalFloat
+  m_Name: SomeComponentFloat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,8 +203,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c98b08b344abf4b95d4403d09232e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  someLocalFloatVariable:
+  sampleLocalFloat:
     debugExternalizableProperty: 0
+    useExternalProperty: 0
+    localProperty:
+      value: 100
+      onValueChanged:
+        debugging: 0
+        onEventRaised:
+          m_PersistentCalls:
+            m_Calls: []
+    externalProperty:
+      referenceObject: {fileID: 18704929}
+  sampleComponentFloat:
+    debugExternalizableProperty: 0
+    useExternalProperty: 1
     localProperty:
       value: 0
       onValueChanged:
@@ -214,8 +227,9 @@ MonoBehaviour:
             m_Calls: []
     externalProperty:
       referenceObject: {fileID: 18704929}
-  someGlobalFloatVariable:
+  sampleScriptableFloat:
     debugExternalizableProperty: 0
+    useExternalProperty: 1
     localProperty:
       value: 0
       onValueChanged:
@@ -224,7 +238,7 @@ MonoBehaviour:
           m_PersistentCalls:
             m_Calls: []
     externalProperty:
-      referenceObject: {fileID: 11400000, guid: c7bfc84035c931e48ace12661d536582, type: 2}
+      referenceObject: {fileID: 11400000, guid: 68f41340d9da42a4b8632c1dfe03991b, type: 2}
 --- !u!4 &1575825081
 Transform:
   m_ObjectHideFlags: 0
