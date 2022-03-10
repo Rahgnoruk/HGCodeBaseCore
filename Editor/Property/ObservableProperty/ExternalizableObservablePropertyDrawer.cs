@@ -16,8 +16,16 @@ namespace HyperGnosys.Core
             EditorGUI.BeginProperty(position, label, property);
             serializedProperty = property;
             useExternalProperty = property.FindPropertyRelative("useExternalProperty").boolValue;
-            position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
-            if (DropDownButton(position))
+
+            label = new GUIContent(label.text, label.text);
+            Rect labelRect = CalculateLabelRect(position);
+            EditorGUI.HandlePrefixLabel(position, labelRect, label, GUIUtility.GetControlID(FocusType.Passive));
+
+            Rect selectorRect = CalculateSelectorRect(labelRect);
+            Rect controlRect = CalculateControlRect(position, selectorRect);
+            
+
+            if (DropDownButton(selectorRect))
             {
                 CreateDropDownMenu();
             }
@@ -26,27 +34,42 @@ namespace HyperGnosys.Core
             {
                 selectedProperty = property.FindPropertyRelative("localProperty");
                 GUIContent localPropertyLabel = new GUIContent("Local Property");
-                EditorGUI.PropertyField(position, selectedProperty, localPropertyLabel, true);
+                EditorGUI.PropertyField(controlRect, selectedProperty, localPropertyLabel, true);
             }
             else
             {
                 //EditorGUI.ObjectField(position, property.FindPropertyRelative("externalProperty"), GUIContent.none);
                 selectedProperty = property.FindPropertyRelative("externalProperty");
                 GUIContent externalPropertyLabel = new GUIContent("External Property");
-                EditorGUI.PropertyField(position, selectedProperty, externalPropertyLabel, true);
+                EditorGUI.PropertyField(controlRect, selectedProperty, externalPropertyLabel, true);
             }
             EditorGUI.EndProperty();
         }
-        private bool DropDownButton(Rect position)
+        private Rect CalculateLabelRect(Rect position)
         {
-            Rect rect = new Rect(position.position, Vector2.one * 20);
-            GUIContent guiContent = new GUIContent();
+            float labelWidth = position.width / 4;
+            return new Rect(position.x, position.y, labelWidth, 16);
+        }
+        private Rect CalculateSelectorRect(Rect labelRect)
+        {
+            float xPosition = labelRect.x + labelRect.width + 10;
+            return new Rect(xPosition, labelRect.y, 10, 16);
+        }
+        private Rect CalculateControlRect(Rect position, Rect selectorRect)
+        {
+            float controlXPosition = selectorRect.x + selectorRect.width + 20;
+            float controlWidth = (position.width/4) * 2.5f;
+            return new Rect(controlXPosition, position.y, controlWidth, position.height);
+        }
+        private bool DropDownButton(Rect rect)
+        {
+            GUIContent guiContent = new GUIContent("S");
             GUIStyle guiStyle = new GUIStyle()
             {
                 fixedWidth = 50f,
                 border = new RectOffset(1, 1, 1, 1)
             };
-            return EditorGUI.DropdownButton(rect, GUIContent.none, FocusType.Keyboard, guiStyle);
+            return EditorGUI.DropdownButton(rect, guiContent, FocusType.Keyboard, guiStyle);
         }
         private void CreateDropDownMenu()
         {
