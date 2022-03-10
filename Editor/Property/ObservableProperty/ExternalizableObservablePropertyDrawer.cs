@@ -26,8 +26,7 @@ namespace HyperGnosys.Core
             {
                 selectedProperty = property.FindPropertyRelative("localProperty");
                 GUIContent localPropertyLabel = new GUIContent("Local Property");
-                Rect fieldRect = new Rect(position.x, position.y, position.width, position.height + 50);
-                EditorGUI.PropertyField(fieldRect, selectedProperty, localPropertyLabel, true);
+                EditorGUI.PropertyField(position, selectedProperty, localPropertyLabel, true);
             }
             else
             {
