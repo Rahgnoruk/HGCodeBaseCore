@@ -7,12 +7,8 @@ namespace HyperGnosys.Core
     public class ExternalizableObservableProperty<ContainedType> : IObservableProperty<ContainedType>
     {
         [SerializeField] private bool debugExternalizableProperty = false;
+        [SerializeField] private bool useExternalProperty = false;
         [SerializeField] private ObservableProperty<ContainedType> localProperty;
-        [Space]
-        [Tooltip("Only assign this if this property should be contained in an external object, otherwise just set the localProperty value." +
-            "\n\nIf the externalProperty is set, the localProperty will be ignored, including the localPropertyReassigned Event. " +
-            "\n\nThe external object should be a Monobehaviour or a ScriptableObject. " +
-            "\nWhichever it is, it has to implement PropertyInterface. There are many premade components in Attributes.")]
         [SerializeField] private ExternalReference<IObservableProperty<ContainedType>> externalProperty 
             = new ExternalReference<IObservableProperty<ContainedType>>();
 
@@ -21,7 +17,7 @@ namespace HyperGnosys.Core
         {
             get
             {
-                if (externalProperty.Reference != null)
+                if (useExternalProperty)
                 {
                     HGDebug.Log($"Accesing Property in {externalProperty.ReferenceObject.name}", debugExternalizableProperty);
                     return externalProperty.Reference.Value;
@@ -33,7 +29,7 @@ namespace HyperGnosys.Core
             }
             set
             {
-                if (externalProperty.Reference != null)
+                if (useExternalProperty)
                 {
                     externalProperty.Reference.Value = value;
                 }
@@ -45,7 +41,7 @@ namespace HyperGnosys.Core
         }
         public void AddListener(IGameEventListener<ContainedType> listener)
         {
-            if (externalProperty.Reference != null)
+            if (useExternalProperty)
             {
                 externalProperty.Reference.AddListener(listener);
             }
@@ -56,7 +52,7 @@ namespace HyperGnosys.Core
         }
         public void RemoveListener(IGameEventListener<ContainedType> listener)
         {
-            if (externalProperty.Reference != null)
+            if (useExternalProperty)
             {
                 externalProperty.Reference.RemoveListener(listener);
             }
@@ -67,7 +63,7 @@ namespace HyperGnosys.Core
         }
         public void AddListener(UnityAction<ContainedType> listener)
         {
-            if (externalProperty.Reference != null)
+            if (useExternalProperty)
             {
                 externalProperty.Reference.AddListener(listener);
             }
@@ -78,7 +74,7 @@ namespace HyperGnosys.Core
         }
         public void RemoveListener(UnityAction<ContainedType> listener)
         {
-            if (externalProperty.Reference != null)
+            if (useExternalProperty)
             {
                 externalProperty.Reference.RemoveListener(listener);
             }
