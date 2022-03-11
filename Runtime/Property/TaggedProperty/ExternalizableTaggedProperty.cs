@@ -7,76 +7,77 @@ namespace HyperGnosys.Core
     public class ExternalizableTaggedProperty<ContainedType> : IObservableProperty<ContainedType>
     {
         [SerializeField] private bool debugExternalizableTaggedProperty = false;
+        [SerializeField] private bool useExternalProperty = false;
         [SerializeField] private TaggedProperty<ContainedType> localProperty;
         [SerializeField] private TaggedPropertyExternalReference<ContainedType> externalProperty;
         public virtual ContainedType Value
         {
             get
             {
-                if (externalProperty.ExternalTaggedProperty != null)
+                if (useExternalProperty)
                 {
                     HGDebug.Log($"Accessing External Tagged Property", debugExternalizableTaggedProperty);
-                    return externalProperty.ExternalTaggedProperty.Value;
+                    return externalProperty.ReferencedProperty.Property.Value;
                 }
                 else
                 {
-                    return localProperty.Value;
+                    return localProperty.Property.Value;
                 }
             }
             set
             {
-                if (externalProperty.ExternalTaggedProperty != null)
+                if (useExternalProperty)
                 {
-                    externalProperty.ExternalTaggedProperty.Value = value;
+                    externalProperty.ReferencedProperty.Property.Value = value;
                 }
                 else
                 {
-                    localProperty.Value = value;
+                    localProperty.Property.Value = value;
                 }
             }
         }
         public void AddListener(IGameEventListener<ContainedType> listener)
         {
-            if (externalProperty.ExternalTaggedProperty != null)
+            if (externalProperty.ReferencedProperty != null)
             {
-                externalProperty.ExternalTaggedProperty.AddListener(listener);
+                externalProperty.ReferencedProperty.Property.AddListener(listener);
             }
             else
             {
-                localProperty.AddListener(listener);
+                localProperty.Property.AddListener(listener);
             }
         }
         public void RemoveListener(IGameEventListener<ContainedType> listener)
         {
-            if (externalProperty.ExternalTaggedProperty != null)
+            if (externalProperty.ReferencedProperty != null)
             {
-                externalProperty.ExternalTaggedProperty.RemoveListener(listener);
+                externalProperty.ReferencedProperty.Property.RemoveListener(listener);
             }
             else
             {
-                localProperty.RemoveListener(listener);
+                localProperty.Property.RemoveListener(listener);
             }
         }
         public void AddListener(UnityAction<ContainedType> listener)
         {
-            if (externalProperty.ExternalTaggedProperty != null)
+            if (externalProperty.ReferencedProperty != null)
             {
-                externalProperty.ExternalTaggedProperty.AddListener(listener);
+                externalProperty.ReferencedProperty.Property.AddListener(listener);
             }
             else
             {
-                localProperty.AddListener(listener);
+                localProperty.Property.AddListener(listener);
             }
         }
         public void RemoveListener(UnityAction<ContainedType> listener)
         {
-            if (externalProperty.ExternalTaggedProperty != null)
+            if (externalProperty.ReferencedProperty != null)
             {
-                externalProperty.ExternalTaggedProperty.RemoveListener(listener);
+                externalProperty.ReferencedProperty.Property.RemoveListener(listener);
             }
             else
             {
-                localProperty.RemoveListener(listener);
+                localProperty.Property.RemoveListener(listener);
             }
         }
     }

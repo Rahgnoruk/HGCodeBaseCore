@@ -16,7 +16,7 @@ namespace HyperGnosys.Core
         public AttributeType GetValue<AttributeType>(PropertyTag attributeTag)
         {
             TaggedProperty<AttributeType> attribute = GetAttribute<AttributeType>(attributeTag);
-            return attribute.Value;
+            return attribute.Property.Value;
         }
         public TaggedProperty<AttributeType> GetAttribute<AttributeType>(PropertyTag attributeTag)
         {
@@ -71,37 +71,37 @@ namespace HyperGnosys.Core
             TaggedProperty<AttributeType> attribute = new TaggedProperty<AttributeType>();
             if (GetAttribute(stringAttributes, attributeTag, ref attribute))
             {
-                attribute.Value = newValue;
+                attribute.Property.Value = newValue;
                 return true;
             }
             if (GetAttribute(floatAttributes, attributeTag, ref attribute))
             {
-                attribute.Value = newValue;
+                attribute.Property.Value = newValue;
                 return true;
             }
             if (GetAttribute(boolAttributes, attributeTag, ref attribute))
             {
-                attribute.Value = newValue;
+                attribute.Property.Value = newValue;
                 return true;
             }
             if (GetAttribute(intAttributes, attributeTag, ref attribute))
             {
-                attribute.Value = newValue;
+                attribute.Property.Value = newValue;
                 return true;
             }
             if (GetAttribute(doubleAttributes, attributeTag, ref attribute))
             {
-                attribute.Value = newValue;
+                attribute.Property.Value = newValue;
                 return true;
             }
             if (GetAttribute(vector3Attributes, attributeTag, ref attribute))
             {
-                attribute.Value = newValue;
+                attribute.Property.Value = newValue;
                 return true;
             }
             if (GetAttribute(gameObjectAttributes, attributeTag, ref attribute))
             {
-                attribute.Value = newValue;
+                attribute.Property.Value = newValue;
                 return true;
             }
             return false;
