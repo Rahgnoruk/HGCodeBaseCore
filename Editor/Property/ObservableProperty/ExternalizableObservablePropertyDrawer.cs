@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
@@ -38,7 +35,6 @@ namespace HyperGnosys.Core
             }
             else
             {
-                //EditorGUI.ObjectField(position, property.FindPropertyRelative("externalProperty"), GUIContent.none);
                 selectedProperty = property.FindPropertyRelative("externalProperty");
                 GUIContent externalPropertyLabel = new GUIContent("External Property");
                 EditorGUI.PropertyField(controlRect, selectedProperty, externalPropertyLabel, true);
