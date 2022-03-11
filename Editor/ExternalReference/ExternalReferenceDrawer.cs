@@ -16,7 +16,8 @@ namespace HyperGnosys.Core
 
             Rect controlRect = CalculateControlRect(position, labelRect);
             SerializedProperty referencedObjectPoperty = property.FindPropertyRelative("referenceObject");
-            EditorGUI.ObjectField(controlRect, referencedObjectPoperty.objectReferenceValue, typeof(Object), true);
+            referencedObjectPoperty.objectReferenceValue = 
+                EditorGUI.ObjectField(controlRect, referencedObjectPoperty.objectReferenceValue, typeof(Object), true);
 
             EditorGUI.EndProperty();
         }
