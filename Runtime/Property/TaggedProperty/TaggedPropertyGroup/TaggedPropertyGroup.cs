@@ -5,24 +5,28 @@ using UnityEngine;
 namespace HyperGnosys.Core
 {
     [Serializable]
-    public class TaggedPropertyGroup<AttributeType>
+    public class TaggedPropertyGroup<PropertyType> : ITaggedPropertyGroup<PropertyType>
     {
-        [SerializeField] private Type itemType = typeof(AttributeType);
-        [SerializeField] private List<TaggedProperty<AttributeType>> list = new List<TaggedProperty<AttributeType>>();
+        [SerializeField] private Type itemType = typeof(PropertyType);
+        [SerializeField] private List<TaggedProperty<PropertyType>> list = new List<TaggedProperty<PropertyType>>();
 
-        public TaggedProperty<AttributeType> FindAttribute(PropertyTag tag)
+        public TaggedProperty<PropertyType> GetPropertyByTag(PropertyTag tag)
         {
-            foreach(TaggedProperty<AttributeType> attribute in list)
+            foreach(TaggedProperty<PropertyType> property in list)
             {
-                if (attribute.Tag.Equals(tag))
+                if (!property.Tag) {
+                    Debug.LogWarning("Theres a Tagged Property Group containing a Property with no tag.");
+                    continue; 
+                }
+                if (property.Tag.Equals(tag))
                 {
-                    return attribute;
+                    return property;
                 }
             }
             return null;
         }
 
         public Type ItemType { get => itemType; set => itemType = value; }
-        public List<TaggedProperty<AttributeType>> List { get => list; set => list = value; }
+        public List<TaggedProperty<PropertyType>> List { get => list; set => list = value; }
     }
 }

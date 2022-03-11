@@ -58,7 +58,7 @@ namespace HyperGnosys.Core
             {
                 return false;
             }
-            attribute = attributeList.FindAttribute(attributeTag) as TaggedProperty<AttributeType>;
+            attribute = attributeList.GetPropertyByTag(attributeTag) as TaggedProperty<AttributeType>;
             if (attribute != null)
             {
                 return true;

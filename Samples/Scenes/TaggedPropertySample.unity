@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &670138725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 670138726}
+  m_Layer: 0
+  m_Name: Properties
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &670138726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670138725}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1165527309}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &837577143
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,48 +197,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ee360d291640e48a08b953d03338c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  someLocalFloatVariable:
+  sampleLocalFloat:
     debugExternalizableTaggedProperty: 0
+    useExternalProperty: 0
     localProperty:
-      value: 0
-      onValueChanged:
-        debugging: 0
-        onEventRaised:
-          m_PersistentCalls:
-            m_Calls: []
-      tag: {fileID: 0}
-    externalProperty:
-      tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
-      propertyGroup: {fileID: 1165527308}
-      taggedProperty:
-        value: 30
+      tag: {fileID: 11400000, guid: 643622cf4629f974f807157b6df550ce, type: 2}
+      property:
+        value: 100
         onValueChanged:
           debugging: 0
           onEventRaised:
             m_PersistentCalls:
               m_Calls: []
-        tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
-  someGlobalFloatVariable:
-    debugExternalizableTaggedProperty: 0
-    localProperty:
-      value: 0
-      onValueChanged:
-        debugging: 0
-        onEventRaised:
-          m_PersistentCalls:
-            m_Calls: []
-      tag: {fileID: 0}
     externalProperty:
       tag: {fileID: 0}
-      propertyGroup: {fileID: 0}
-      taggedProperty:
+      propertyGroup:
+        referenceObject: {fileID: 0}
+      referencedProperty:
+        tag: {fileID: 0}
+        property:
+          value: 0
+          onValueChanged:
+            debugging: 0
+            onEventRaised:
+              m_PersistentCalls:
+                m_Calls: []
+  sampleComponentFloat:
+    debugExternalizableTaggedProperty: 0
+    useExternalProperty: 1
+    localProperty:
+      tag: {fileID: 0}
+      property:
         value: 0
         onValueChanged:
           debugging: 0
           onEventRaised:
             m_PersistentCalls:
               m_Calls: []
-        tag: {fileID: 0}
+    externalProperty:
+      tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
+      propertyGroup:
+        referenceObject: {fileID: 1165527308}
+      referencedProperty:
+        tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
+        property:
+          value: 30
+          onValueChanged:
+            debugging: 0
+            onEventRaised:
+              m_PersistentCalls:
+                m_Calls: []
+  sampleScriptableFloat:
+    debugExternalizableTaggedProperty: 0
+    useExternalProperty: 1
+    localProperty:
+      tag: {fileID: 0}
+      property:
+        value: 0
+        onValueChanged:
+          debugging: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+    externalProperty:
+      tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
+      propertyGroup:
+        referenceObject: {fileID: 11400000, guid: 5e19f7af71bf22e488d81da19310760c, type: 2}
+      referencedProperty:
+        tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
+        property:
+          value: 100
+          onValueChanged:
+            debugging: 0
+            onEventRaised:
+              m_PersistentCalls:
+                m_Calls: []
 --- !u!1 &905739831
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,22 +306,24 @@ MonoBehaviour:
     value:
       floatAttributes:
         list:
-        - value: 0
-          onValueChanged:
-            debugging: 0
-            onEventRaised:
-              m_PersistentCalls:
-                m_Calls: []
-          tag: {fileID: 0}
+        - tag: {fileID: 0}
+          property:
+            value: 0
+            onValueChanged:
+              debugging: 0
+              onEventRaised:
+                m_PersistentCalls:
+                  m_Calls: []
       stringAttributes:
         list:
-        - value: 
-          onValueChanged:
-            debugging: 0
-            onEventRaised:
-              m_PersistentCalls:
-                m_Calls: []
-          tag: {fileID: 0}
+        - tag: {fileID: 0}
+          property:
+            value: 
+            onValueChanged:
+              debugging: 0
+              onEventRaised:
+                m_PersistentCalls:
+                  m_Calls: []
       boolAttributes:
         list: []
       intAttributes:
@@ -316,36 +382,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d7019568b9fca4481ad5f4b3a63d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugging: 0
-  property:
-    value:
-      list:
-      - value: 30
+  propertyGroup:
+    list:
+    - tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
+      property:
+        value: 30
         onValueChanged:
           debugging: 0
           onEventRaised:
             m_PersistentCalls:
               m_Calls: []
-        tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
-      - value: 50
-        onValueChanged:
-          debugging: 0
-          onEventRaised:
-            m_PersistentCalls:
-              m_Calls: []
-        tag: {fileID: 11400000, guid: 643622cf4629f974f807157b6df550ce, type: 2}
-      - value: 100
-        onValueChanged:
-          debugging: 0
-          onEventRaised:
-            m_PersistentCalls:
-              m_Calls: []
-        tag: {fileID: 11400000, guid: 84288e5514acdc642a5aacf2a5cb0346, type: 2}
-    onValueChanged:
-      debugging: 0
-      onEventRaised:
-        m_PersistentCalls:
-          m_Calls: []
 --- !u!4 &1165527309
 Transform:
   m_ObjectHideFlags: 0
@@ -353,10 +399,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165527307}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 670138726}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
