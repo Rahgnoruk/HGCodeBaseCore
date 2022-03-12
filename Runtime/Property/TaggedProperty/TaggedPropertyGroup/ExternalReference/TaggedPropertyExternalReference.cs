@@ -6,8 +6,9 @@ namespace HyperGnosys.Core
     [Serializable]
     public class TaggedPropertyExternalReference<PropertyGroupType> : ISerializationCallbackReceiver
     {
+        [SerializeField] private ExternalReference<ITaggedPropertyGroup<PropertyGroupType>> propertyGroup 
+            = new ExternalReference<ITaggedPropertyGroup<PropertyGroupType>>();
         [SerializeField] private PropertyTag tag;
-        [SerializeField] private ExternalReference<ITaggedPropertyGroup<PropertyGroupType>> propertyGroup;
         [SerializeField] private TaggedProperty<PropertyGroupType> referencedProperty;
 
         public void OnBeforeSerialize()

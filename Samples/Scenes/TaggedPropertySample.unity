@@ -210,9 +210,9 @@ MonoBehaviour:
             m_PersistentCalls:
               m_Calls: []
     externalProperty:
-      tag: {fileID: 0}
       propertyGroup:
         referenceObject: {fileID: 0}
+      tag: {fileID: 0}
       referencedProperty:
         tag: {fileID: 0}
         property:
@@ -235,13 +235,13 @@ MonoBehaviour:
             m_PersistentCalls:
               m_Calls: []
     externalProperty:
-      tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
       propertyGroup:
         referenceObject: {fileID: 1165527308}
+      tag: {fileID: 11400000, guid: 643622cf4629f974f807157b6df550ce, type: 2}
       referencedProperty:
-        tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
+        tag: {fileID: 0}
         property:
-          value: 30
+          value: 0
           onValueChanged:
             debugging: 0
             onEventRaised:
@@ -260,9 +260,9 @@ MonoBehaviour:
             m_PersistentCalls:
               m_Calls: []
     externalProperty:
-      tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
       propertyGroup:
         referenceObject: {fileID: 11400000, guid: 5e19f7af71bf22e488d81da19310760c, type: 2}
+      tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
       referencedProperty:
         tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
         property:
@@ -387,6 +387,14 @@ MonoBehaviour:
     - tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
       property:
         value: 30
+        onValueChanged:
+          debugging: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+    - tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
+      property:
+        value: 100
         onValueChanged:
           debugging: 0
           onEventRaised:
