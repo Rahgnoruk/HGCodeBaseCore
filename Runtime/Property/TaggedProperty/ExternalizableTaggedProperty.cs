@@ -9,7 +9,7 @@ namespace HyperGnosys.Core
         [SerializeField] private bool debugExternalizableTaggedProperty = false;
         [SerializeField] private bool useExternalProperty = false;
         [SerializeField] private TaggedProperty<ContainedType> localProperty;
-        [SerializeField] private TaggedPropertyExternalReference<ContainedType> externalProperty;
+        [SerializeField] private TaggedPropertyReferenceFromGroup<ContainedType> externalProperty;
         public virtual ContainedType Value
         {
             get
