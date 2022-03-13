@@ -4,7 +4,7 @@ using UnityEngine;
 namespace HyperGnosys.Core
 {
     [Serializable]
-    public class TaggedPropertyExternalReference<PropertyGroupType> : ISerializationCallbackReceiver
+    public class TaggedPropertyReferenceFromGroup<PropertyGroupType> : ISerializationCallbackReceiver
     {
         [SerializeField] private ExternalReference<ITaggedPropertyGroup<PropertyGroupType>> propertyGroup 
             = new ExternalReference<ITaggedPropertyGroup<PropertyGroupType>>();
@@ -15,6 +15,7 @@ namespace HyperGnosys.Core
         {
             if (propertyGroup.Reference == null || tag == null)
             {
+                referencedProperty = null;
                 return;
             }
             referencedProperty = propertyGroup.Reference.GetPropertyByTag(tag);
