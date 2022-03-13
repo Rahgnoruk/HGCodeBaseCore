@@ -237,11 +237,11 @@ MonoBehaviour:
     externalProperty:
       propertyGroup:
         referenceObject: {fileID: 1165527308}
-      tag: {fileID: 11400000, guid: 643622cf4629f974f807157b6df550ce, type: 2}
+      tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
       referencedProperty:
-        tag: {fileID: 0}
+        tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
         property:
-          value: 0
+          value: 30
           onValueChanged:
             debugging: 0
             onEventRaised:

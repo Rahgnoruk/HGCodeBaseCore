@@ -6,21 +6,28 @@ namespace HyperGnosys.Core
     [CustomPropertyDrawer(typeof(ExternalizableObservableProperty<>))]
     public class ExternalizableObservablePropertyDrawer : PropertyDrawer
     {
+        const float lineHeight = 16;
+        const float margin = 20;
         private SerializedProperty serializedProperty;
         private bool useExternalProperty = false;
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             EditorGUI.BeginProperty(position, label, property);
+
+            RectCalculator rectCalculator = new RectCalculator(lineHeight, margin);
+
             serializedProperty = property;
             useExternalProperty = property.FindPropertyRelative("useExternalProperty").boolValue;
 
             label = new GUIContent(label.text, label.text);
-            Rect labelRect = CalculateLabelRect(position);
+            (Rect, Rect) labelAndControlRects = rectCalculator.Get1to4Rects(position);
+            Rect labelRect = labelAndControlRects.Item1;
             EditorGUI.HandlePrefixLabel(position, labelRect, label, GUIUtility.GetControlID(FocusType.Passive));
 
-            Rect selectorRect = CalculateSelectorRect(labelRect);
-            Rect controlRect = CalculateControlRect(position, selectorRect);
-            
+            (Rect, Rect) selectorAndPropertyRects = rectCalculator.GetRectsFromFirstRectWidth(labelAndControlRects.Item2, 10);
+            Rect selectorRect = selectorAndPropertyRects.Item1;
+            Rect propertyRect = selectorAndPropertyRects.Item2;
+
 
             if (DropDownButton(selectorRect))
             {
@@ -31,31 +38,15 @@ namespace HyperGnosys.Core
             {
                 selectedProperty = property.FindPropertyRelative("localProperty");
                 GUIContent localPropertyLabel = new GUIContent("Local Property");
-                EditorGUI.PropertyField(controlRect, selectedProperty, localPropertyLabel, true);
+                EditorGUI.PropertyField(propertyRect, selectedProperty, localPropertyLabel, true);
             }
             else
             {
                 selectedProperty = property.FindPropertyRelative("externalProperty");
                 GUIContent externalPropertyLabel = new GUIContent("External Property");
-                EditorGUI.PropertyField(controlRect, selectedProperty, externalPropertyLabel, true);
+                EditorGUI.PropertyField(propertyRect, selectedProperty, externalPropertyLabel, true);
             }
             EditorGUI.EndProperty();
-        }
-        private Rect CalculateLabelRect(Rect position)
-        {
-            float labelWidth = position.width / 4;
-            return new Rect(position.x, position.y, labelWidth, 16);
-        }
-        private Rect CalculateSelectorRect(Rect labelRect)
-        {
-            float xPosition = labelRect.x + labelRect.width + 10;
-            return new Rect(xPosition, labelRect.y, 10, 16);
-        }
-        private Rect CalculateControlRect(Rect position, Rect selectorRect)
-        {
-            float controlXPosition = selectorRect.x + selectorRect.width + 20;
-            float controlWidth = (position.width/4) * 2.5f;
-            return new Rect(controlXPosition, position.y, controlWidth, position.height);
         }
         private bool DropDownButton(Rect rect)
         {
