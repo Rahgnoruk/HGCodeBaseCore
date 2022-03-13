@@ -23,7 +23,7 @@ namespace HyperGnosys.Core
             SerializedProperty referencedObjectPoperty = property.FindPropertyRelative("referenceObject");
             referencedObjectPoperty.objectReferenceValue = 
                 EditorGUI.ObjectField(controlRect, referencedObjectPoperty.objectReferenceValue, typeof(Object), true);
-
+            property.serializedObject.ApplyModifiedProperties();
             EditorGUI.EndProperty();
         }
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
