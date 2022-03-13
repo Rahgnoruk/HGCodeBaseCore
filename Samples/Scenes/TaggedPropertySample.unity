@@ -152,7 +152,7 @@ Transform:
   m_Children:
   - {fileID: 1165527309}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &837577143
 GameObject:
@@ -183,7 +183,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &837577145
 MonoBehaviour:
@@ -272,87 +272,6 @@ MonoBehaviour:
             onEventRaised:
               m_PersistentCalls:
                 m_Calls: []
---- !u!1 &905739831
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 905739833}
-  - component: {fileID: 905739832}
-  m_Layer: 0
-  m_Name: Attributes
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &905739832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905739831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9221c094f0193946a0e2737ca184378, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugging: 0
-  property:
-    value:
-      floatAttributes:
-        list:
-        - tag: {fileID: 0}
-          property:
-            value: 0
-            onValueChanged:
-              debugging: 0
-              onEventRaised:
-                m_PersistentCalls:
-                  m_Calls: []
-      stringAttributes:
-        list:
-        - tag: {fileID: 0}
-          property:
-            value: 
-            onValueChanged:
-              debugging: 0
-              onEventRaised:
-                m_PersistentCalls:
-                  m_Calls: []
-      boolAttributes:
-        list: []
-      intAttributes:
-        list: []
-      doubleAttributes:
-        list: []
-      vector3Attributes:
-        list: []
-      gameObjectAttributes:
-        list: []
-    onValueChanged:
-      debugging: 0
-      onEventRaised:
-        m_PersistentCalls:
-          m_Calls: []
---- !u!4 &905739833
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905739831}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1165527307
 GameObject:
   m_ObjectHideFlags: 0
