@@ -41,6 +41,7 @@ namespace HyperGnosys.Core
             GUI.enabled = true;
             lines.Add(referencedPropertyRect);
 
+            property.serializedObject.ApplyModifiedProperties();
             EditorGUI.EndProperty();
         }
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)

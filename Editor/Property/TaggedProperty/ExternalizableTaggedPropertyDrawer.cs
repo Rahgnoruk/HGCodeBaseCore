@@ -49,6 +49,7 @@ namespace HyperGnosys.Core
                 GUIContent externalPropertyLabel = new GUIContent("External Property");
                 EditorGUI.PropertyField(propertyRect, selectedProperty, externalPropertyLabel, true);
             }
+            property.serializedObject.ApplyModifiedProperties();
             EditorGUI.EndProperty();
         }
         private bool DropDownButton(Rect rect)
