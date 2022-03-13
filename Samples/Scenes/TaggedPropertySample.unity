@@ -197,6 +197,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ee360d291640e48a08b953d03338c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sampleString:
+    debugExternalizableTaggedProperty: 0
+    useExternalProperty: 1
+    localProperty:
+      tag: {fileID: 0}
+      property:
+        value: 
+        onValueChanged:
+          debugging: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+    externalProperty:
+      propertyGroup:
+        referenceObject: {fileID: 11400000, guid: b34caeca3669d8846ae320fad64335f3, type: 2}
+      tag: {fileID: 11400000, guid: 45fabaf39f120b746b20894be766c50d, type: 2}
+      referencedProperty:
+        tag: {fileID: 11400000, guid: 45fabaf39f120b746b20894be766c50d, type: 2}
+        property:
+          value: Test
+          onValueChanged:
+            debugging: 0
+            onEventRaised:
+              m_PersistentCalls:
+                m_Calls: []
   sampleLocalFloat:
     debugExternalizableTaggedProperty: 0
     useExternalProperty: 0
