@@ -44,7 +44,8 @@ namespace HyperGnosys.Core
         {
             get
             {
-                return referenceObject != null ? (TypeToReference)(object)referenceObject : null;
+                if (referenceObject == null || !(referenceObject is TypeToReference)) return null;
+                return (TypeToReference)(object)referenceObject;
             }
         }
 

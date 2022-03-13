@@ -2,7 +2,7 @@
 
 namespace HyperGnosys.Core
 {
-    public class HashSetProperty<HashSetItemVariableType>: Property<HashSetWrapper<HashSetItemVariableType>>
+    public class HashSetProperty<HashSetItemVariableType>: ExternalizableObservableProperty<HashSetWrapper<HashSetItemVariableType>>
     {
         public HashSetWrapper<HashSetItemVariableType> HashSetWrapper
         {

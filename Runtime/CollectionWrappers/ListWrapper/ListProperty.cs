@@ -11,7 +11,7 @@ namespace HyperGnosys.Core
     /// <typeparam name="ScriptableRegistryEventType"></typeparam>
     /// RECUERDA MARCAR SERIALIZABLES LAS CLASES QUE HEREDEN
     [Serializable]
-    public class ListProperty<ListItemType> : Property <ListWrapper<ListItemType>>
+    public class ListProperty<ListItemType> : ExternalizableObservableProperty <ListWrapper<ListItemType>>
     {
         public override ListWrapper<ListItemType> Value
         {

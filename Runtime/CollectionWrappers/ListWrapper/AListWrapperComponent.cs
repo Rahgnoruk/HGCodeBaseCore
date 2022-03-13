@@ -1,6 +1,6 @@
 ﻿namespace HyperGnosys.Core
 {
-    public abstract class AListWrapperComponent<ListItemType>: APropertyComponent<ListWrapper<ListItemType>>
+    public abstract class AListWrapperComponent<ListItemType>: AObservablePropertyComponent<ListWrapper<ListItemType>>
     {
     }
 }
