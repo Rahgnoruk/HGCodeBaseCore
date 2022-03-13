@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace HyperGnosys.Core
 {
-    [CustomPropertyDrawer(typeof(TaggedPropertyReferenceFromGroup<float>))]
+    [CustomPropertyDrawer(typeof(TaggedPropertyReferenceFromGroup<>))]
     public class TaggedPropertyExternalReferenceDrawer : PropertyDrawer
     {
         const float lineHeight = 16;
