@@ -178,7 +178,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837577143}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -201,7 +201,7 @@ MonoBehaviour:
     debugExternalizableTaggedProperty: 0
     useExternalProperty: 1
     localProperty:
-      tag: {fileID: 0}
+      name: 
       property:
         value: 
         onValueChanged:
@@ -226,9 +226,9 @@ MonoBehaviour:
     debugExternalizableTaggedProperty: 0
     useExternalProperty: 0
     localProperty:
-      tag: {fileID: 11400000, guid: 643622cf4629f974f807157b6df550ce, type: 2}
+      name: Speed
       property:
-        value: 100
+        value: 5
         onValueChanged:
           debugging: 0
           onEventRaised:
@@ -251,7 +251,7 @@ MonoBehaviour:
     debugExternalizableTaggedProperty: 0
     useExternalProperty: 1
     localProperty:
-      tag: {fileID: 0}
+      name: 
       property:
         value: 0
         onValueChanged:
@@ -266,7 +266,7 @@ MonoBehaviour:
       referencedProperty:
         tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
         property:
-          value: 0
+          value: 30
           onValueChanged:
             debugging: 0
             onEventRaised:
@@ -276,7 +276,7 @@ MonoBehaviour:
     debugExternalizableTaggedProperty: 0
     useExternalProperty: 1
     localProperty:
-      tag: {fileID: 0}
+      name: 
       property:
         value: 0
         onValueChanged:
@@ -330,7 +330,7 @@ MonoBehaviour:
     list:
     - tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
       property:
-        value: 0
+        value: 30
         onValueChanged:
           debugging: 0
           onEventRaised:
