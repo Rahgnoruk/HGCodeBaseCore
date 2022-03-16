@@ -6,25 +6,37 @@ namespace HyperGnosys.Core
     [Serializable]
     public class TaggedPropertyReferenceFromGroup<PropertyGroupType> : ISerializationCallbackReceiver
     {
-        [SerializeField] private ExternalReference<ITaggedPropertyGroup<PropertyGroupType>> propertyGroup 
+        [SerializeField] 
+        private ExternalReference<ITaggedPropertyGroup<PropertyGroupType>> propertyGroup 
             = new ExternalReference<ITaggedPropertyGroup<PropertyGroupType>>();
         [SerializeField] private PropertyTag tag;
-        [SerializeField] private TaggedProperty<PropertyGroupType> referencedProperty;
+        [SerializeField] private TaggedProperty<PropertyGroupType> propertyPreview;
+        private TaggedProperty<PropertyGroupType> property = null;
 
         public void OnBeforeSerialize()
         {
             if (propertyGroup.Reference == null || tag == null)
             {
-                referencedProperty = null;
+                propertyPreview = null;
                 return;
             }
-            referencedProperty = propertyGroup.Reference.GetPropertyByTag(tag);
+            propertyPreview = propertyGroup.Reference.GetPropertyByTag(tag);
         }
 
         public void OnAfterDeserialize()
         {
         }
 
-        public TaggedProperty<PropertyGroupType> ReferencedProperty => referencedProperty;
+        public TaggedProperty<PropertyGroupType> ReferencedProperty
+        {
+            get
+            {
+                if(property == null)
+                {
+                    property = propertyGroup.Reference.GetPropertyByTag(tag);
+                }
+                return property;
+            }
+        }
     }
 }

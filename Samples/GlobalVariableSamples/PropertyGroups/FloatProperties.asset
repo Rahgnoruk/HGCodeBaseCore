@@ -18,7 +18,7 @@ MonoBehaviour:
       property:
         value: 100
         onValueChanged:
-          debugging: 0
+          debugGameEvent: 0
           onEventRaised:
             m_PersistentCalls:
               m_Calls: []
@@ -26,7 +26,15 @@ MonoBehaviour:
       property:
         value: 200
         onValueChanged:
-          debugging: 0
+          debugGameEvent: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+    - tag: {fileID: 11400000, guid: 643622cf4629f974f807157b6df550ce, type: 2}
+      property:
+        value: 100
+        onValueChanged:
+          debugGameEvent: 1
           onEventRaised:
             m_PersistentCalls:
               m_Calls: []

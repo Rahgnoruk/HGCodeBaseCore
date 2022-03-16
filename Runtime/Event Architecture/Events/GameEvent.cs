@@ -7,7 +7,7 @@ namespace HyperGnosys.Core
     [Serializable]
     public class GameEvent<T> : IGameEvent<T>
     {
-        [SerializeField] private bool debugging = false;
+        [SerializeField] private bool debugGameEvent = false;
         [Space]
         [SerializeField] private UnityEvent<T> onEventRaised = new UnityEvent<T>();
 
@@ -15,6 +15,7 @@ namespace HyperGnosys.Core
 
         public virtual void Raise(T item)
         {
+            HGDebug.Log("Game Event Raised with new value: " + item.ToString(), debugGameEvent);
             onEventRaised?.Invoke(item);
             ///Va desde el ultimo al primero en caso de que 
             ///como parte de la respuesta el listener se remueva
@@ -50,7 +51,7 @@ namespace HyperGnosys.Core
             onEventRaised.RemoveListener(listener);
         }
 
-        public bool Debugging { get => debugging; set => debugging = value; }
+        public bool Debugging { get => debugGameEvent; set => debugGameEvent = value; }
         public UnityEvent<T> OnEventRaised { get => onEventRaised; set => onEventRaised = value; }
     }
 }

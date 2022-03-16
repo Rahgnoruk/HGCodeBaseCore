@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -6,7 +5,7 @@ using UnityEngine;
 namespace HyperGnosys.Core
 {
     [CustomPropertyDrawer(typeof(TaggedPropertyReferenceFromGroup<>))]
-    public class TaggedPropertyExternalReferenceDrawer : PropertyDrawer
+    public class TaggedPropertyReferenceFromGroupDrawer : PropertyDrawer
     {
         const float lineHeight = 16;
         const float margin = 20;
@@ -25,7 +24,7 @@ namespace HyperGnosys.Core
 
             Rect propertyGroupLine = rectCalculator.GetNextLineContainer(position);
             SerializedProperty propertyGroup = property.FindPropertyRelative("propertyGroup");
-            EditorGUI.PropertyField(propertyGroupLine, propertyGroup);
+            EditorGUI.PropertyField(propertyGroupLine, propertyGroup, true);
             lines.Add(propertyGroupLine);
 
             Rect tagLine = rectCalculator.GetNextLineContainer(propertyGroupLine);
@@ -35,7 +34,7 @@ namespace HyperGnosys.Core
             lines.Add(tagLine);
 
             Rect referencedPropertyRect = rectCalculator.GetNextLineContainer(tagLine);
-            SerializedProperty referencedProperty = property.FindPropertyRelative("referencedProperty");
+            SerializedProperty referencedProperty = property.FindPropertyRelative("propertyPreview");
             GUI.enabled = false;
             EditorGUI.PropertyField(referencedPropertyRect, referencedProperty, true);
             GUI.enabled = true;
@@ -46,8 +45,7 @@ namespace HyperGnosys.Core
         }
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            SerializedProperty drawnProperty = property.FindPropertyRelative("referencedProperty");
-            //return EditorGUI.GetPropertyHeight(drawnProperty, true) + 32;
+            SerializedProperty drawnProperty = property.FindPropertyRelative("propertyPreview");
             return rectCalculator.CalculateTotalHeigh(drawnProperty, lines.ToArray());
         }
     }
