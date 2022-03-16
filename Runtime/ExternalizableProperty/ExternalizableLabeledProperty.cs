@@ -53,7 +53,7 @@ namespace HyperGnosys.Core
         }
         public void AddListener(IGameEventListener<ContainedType> listener)
         {
-            if (externalProperty.ReferencedProperty != null)
+            if (useExternalProperty)
             {
                 externalProperty.ReferencedProperty.AddListener(listener);
             }
@@ -64,7 +64,7 @@ namespace HyperGnosys.Core
         }
         public void RemoveListener(IGameEventListener<ContainedType> listener)
         {
-            if (externalProperty.ReferencedProperty != null)
+            if (useExternalProperty)
             {
                 externalProperty.ReferencedProperty.RemoveListener(listener);
             }
@@ -75,7 +75,7 @@ namespace HyperGnosys.Core
         }
         public void AddListener(UnityAction<ContainedType> listener)
         {
-            if (externalProperty.ReferencedProperty != null)
+            if (useExternalProperty)
             {
                 externalProperty.ReferencedProperty.AddListener(listener);
             }
@@ -86,7 +86,7 @@ namespace HyperGnosys.Core
         }
         public void RemoveListener(UnityAction<ContainedType> listener)
         {
-            if (externalProperty.ReferencedProperty != null)
+            if (useExternalProperty)
             {
                 externalProperty.ReferencedProperty.RemoveListener(listener);
             }
