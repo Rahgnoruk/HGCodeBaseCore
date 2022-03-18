@@ -1,20 +1,19 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
 namespace HyperGnosys.Core
 {
-    [CustomPropertyDrawer(typeof(TaggedPropertyReferenceFromGroup<>))]
-    public class TaggedPropertyReferenceFromGroupDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(TaggedPropertyInGroup<>))]
+    public class TaggedPropertyInGroupDrawer : PropertyDrawer
     {
         const float lineHeight = 16;
         const float margin = 20;
-        RectCalculator rectCalculator;
-        List<Rect> lines;
+        RectCalculator rectCalculator = new RectCalculator(lineHeight, margin);
+        List<Rect> lines = new List<Rect>();
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             EditorGUI.BeginProperty(position, label, property);
-            
+
             lines = new List<Rect>();
             rectCalculator = new RectCalculator(lineHeight, margin);
 
