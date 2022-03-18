@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
-public class FillSlider : MonoBehaviour
+public class PropertyFillSlider : MonoBehaviour
 {
     [SerializeField] private Slider fillSlider;
     [SerializeField] private ExternalizableLabeledProperty<float> currentPropertyValue;
