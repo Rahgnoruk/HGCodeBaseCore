@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e3fb2dded2078e4fbfbc2132f61f221, type: 3}
-  m_Name: 5 Speed
+  m_Name: Health
   m_EditorClassIdentifier: 
-  value: 5
-  onFloatChanged:
-    m_PersistentCalls:
-      m_Calls: []
+  debugging: 0
+  globalProperty:
+    value: 100
+    onValueChanged:
+      debugGameEvent: 0
+      onEventRaised:
+        m_PersistentCalls:
+          m_Calls: []

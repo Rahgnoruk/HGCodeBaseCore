@@ -16,13 +16,13 @@ MonoBehaviour:
     list:
     - tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
       property:
-        value: 100
+        value: 200
         onValueChanged:
           debugGameEvent: 0
           onEventRaised:
             m_PersistentCalls:
               m_Calls: []
-    - tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
+    - tag: {fileID: 11400000, guid: 7385282a595ef914f9844c27fcf09b1e, type: 2}
       property:
         value: 200
         onValueChanged:
@@ -34,7 +34,31 @@ MonoBehaviour:
       property:
         value: 100
         onValueChanged:
-          debugGameEvent: 1
+          debugGameEvent: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+    - tag: {fileID: 11400000, guid: 84288e5514acdc642a5aacf2a5cb0346, type: 2}
+      property:
+        value: 100
+        onValueChanged:
+          debugGameEvent: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+    - tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
+      property:
+        value: 30
+        onValueChanged:
+          debugGameEvent: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+    - tag: {fileID: 11400000, guid: ccc83a9e4ea6acc48aca85e42fd14813, type: 2}
+      property:
+        value: 50
+        onValueChanged:
+          debugGameEvent: 0
           onEventRaised:
             m_PersistentCalls:
               m_Calls: []
