@@ -8,7 +8,7 @@ namespace HyperGnosys.Core
     {
         [SerializeField] private bool debugExternalizableTaggedProperty = false;
         [SerializeField] private bool useExternalProperty = false;
-        [SerializeField] private NamedProperty<ContainedType> localProperty;
+        [SerializeField] private NamedProperty<ContainedType> localProperty = new NamedProperty<ContainedType>();
         [SerializeField] private TaggedPropertyReferenceFromGroup<ContainedType> externalProperty;
         public string Label
         {

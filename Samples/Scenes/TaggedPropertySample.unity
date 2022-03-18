@@ -523,7 +523,7 @@ MonoBehaviour:
       propertyGroup:
         referenceObject: {fileID: 1165527308}
       tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
-      referencedProperty:
+      propertyPreview:
         tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
         property:
           value: 100
@@ -821,7 +821,7 @@ MonoBehaviour:
       propertyGroup:
         referenceObject: {fileID: 11400000, guid: b34caeca3669d8846ae320fad64335f3, type: 2}
       tag: {fileID: 11400000, guid: 45fabaf39f120b746b20894be766c50d, type: 2}
-      referencedProperty:
+      propertyPreview:
         tag: {fileID: 11400000, guid: 45fabaf39f120b746b20894be766c50d, type: 2}
         property:
           value: Test
@@ -846,7 +846,7 @@ MonoBehaviour:
       propertyGroup:
         referenceObject: {fileID: 0}
       tag: {fileID: 0}
-      referencedProperty:
+      propertyPreview:
         tag: {fileID: 0}
         property:
           value: 0
@@ -871,7 +871,7 @@ MonoBehaviour:
       propertyGroup:
         referenceObject: {fileID: 1165527308}
       tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
-      referencedProperty:
+      propertyPreview:
         tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
         property:
           value: 30
@@ -896,7 +896,7 @@ MonoBehaviour:
       propertyGroup:
         referenceObject: {fileID: 11400000, guid: 5e19f7af71bf22e488d81da19310760c, type: 2}
       tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
-      referencedProperty:
+      propertyPreview:
         tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
         property:
           value: 100
@@ -1351,7 +1351,7 @@ MonoBehaviour:
       propertyGroup:
         referenceObject: {fileID: 1165527308}
       tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
-      referencedProperty:
+      propertyPreview:
         tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
         property:
           value: 100
@@ -1376,7 +1376,7 @@ MonoBehaviour:
       propertyGroup:
         referenceObject: {fileID: 11400000, guid: 5e19f7af71bf22e488d81da19310760c, type: 2}
       tag: {fileID: 11400000, guid: 84288e5514acdc642a5aacf2a5cb0346, type: 2}
-      referencedProperty:
+      propertyPreview:
         tag: {fileID: 0}
         property:
           value: 0
@@ -1586,7 +1586,7 @@ MonoBehaviour:
       propertyGroup:
         referenceObject: {fileID: 1165527308}
       tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
-      referencedProperty:
+      propertyPreview:
         tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
         property:
           value: 100

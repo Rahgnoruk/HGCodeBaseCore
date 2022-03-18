@@ -7,7 +7,7 @@ namespace HyperGnosys.Core
     public class NamedProperty<ContainedType> : IObservableProperty<ContainedType>
     {
         [SerializeField] private string name;
-        [SerializeField] private ObservableProperty<ContainedType> property;
+        [SerializeField] private ObservableProperty<ContainedType> property = new ObservableProperty<ContainedType>();
 
         public string Name { get => name; }
         public ContainedType Value { get => property.Value; set => property.Value = value; }
