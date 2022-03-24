@@ -168,9 +168,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugging: 0
   property:
-    value: 0
+    value: 20
     onValueChanged:
-      debugging: 0
+      debugGameEvent: 0
       onEventRaised:
         m_PersistentCalls:
           m_Calls: []
@@ -209,7 +209,7 @@ MonoBehaviour:
     localProperty:
       value: 100
       onValueChanged:
-        debugging: 0
+        debugGameEvent: 0
         onEventRaised:
           m_PersistentCalls:
             m_Calls: []
@@ -221,7 +221,7 @@ MonoBehaviour:
     localProperty:
       value: 0
       onValueChanged:
-        debugging: 0
+        debugGameEvent: 0
         onEventRaised:
           m_PersistentCalls:
             m_Calls: []
@@ -233,12 +233,20 @@ MonoBehaviour:
     localProperty:
       value: 0
       onValueChanged:
-        debugging: 0
+        debugGameEvent: 0
         onEventRaised:
           m_PersistentCalls:
             m_Calls: []
     externalProperty:
-      referenceObject: {fileID: 11400000, guid: 68f41340d9da42a4b8632c1dfe03991b, type: 2}
+      referenceObject: {fileID: 11400000, guid: 43a81ce9de823cf4f887340b9404942e, type: 2}
+  observableFloat:
+    referenceObject: {fileID: 18704927}
+    referenceComponent: {fileID: 18704929}
+  objectReferenceFloat:
+    referenceObject: {fileID: 0}
+    componentReference:
+      referenceObject: {fileID: 0}
+      referenceComponent: {fileID: 0}
 --- !u!4 &1575825081
 Transform:
   m_ObjectHideFlags: 0

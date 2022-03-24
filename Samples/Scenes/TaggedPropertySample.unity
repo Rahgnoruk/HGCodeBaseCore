@@ -1098,7 +1098,7 @@ MonoBehaviour:
       propertyPreview:
         tag: {fileID: 11400000, guid: 643622cf4629f974f807157b6df550ce, type: 2}
         property:
-          value: 70
+          value: 80
           onValueChanged:
             debugGameEvent: 0
             onEventRaised:
@@ -1211,7 +1211,7 @@ MonoBehaviour:
       propertyPreview:
         tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
         property:
-          value: 100
+          value: 30
           onValueChanged:
             debugGameEvent: 0
             onEventRaised:
@@ -1970,7 +1970,7 @@ MonoBehaviour:
         propertyPreview:
           tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
           property:
-            value: 100
+            value: 30
             onValueChanged:
               debugGameEvent: 0
               onEventRaised:
@@ -2113,7 +2113,7 @@ MonoBehaviour:
       propertyPreview:
         tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
         property:
-          value: 200
+          value: 130
           onValueChanged:
             debugGameEvent: 0
             onEventRaised:
@@ -2523,10 +2523,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   propertyGroup:
-    list:
+    properties:
     - tag: {fileID: 11400000, guid: 664c5410b2524c74fa500034f570207b, type: 2}
       property:
-        value: 100
+        value: 30
+        onValueChanged:
+          debugGameEvent: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+    - tag: {fileID: 11400000, guid: 643622cf4629f974f807157b6df550ce, type: 2}
+      property:
+        value: 30
+        onValueChanged:
+          debugGameEvent: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+    - tag: {fileID: 11400000, guid: 84288e5514acdc642a5aacf2a5cb0346, type: 2}
+      property:
+        value: 30
         onValueChanged:
           debugGameEvent: 0
           onEventRaised:
@@ -3578,7 +3594,7 @@ MonoBehaviour:
       propertyPreview:
         tag: {fileID: 11400000, guid: 643622cf4629f974f807157b6df550ce, type: 2}
         property:
-          value: 70
+          value: 80
           onValueChanged:
             debugGameEvent: 0
             onEventRaised:
@@ -3848,7 +3864,7 @@ MonoBehaviour:
       propertyPreview:
         tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
         property:
-          value: 200
+          value: 130
           onValueChanged:
             debugGameEvent: 0
             onEventRaised:
@@ -4045,7 +4061,7 @@ MonoBehaviour:
       propertyPreview:
         tag: {fileID: 11400000, guid: ccc83a9e4ea6acc48aca85e42fd14813, type: 2}
         property:
-          value: 50
+          value: 60
           onValueChanged:
             debugGameEvent: 0
             onEventRaised:
@@ -4298,7 +4314,7 @@ MonoBehaviour:
         propertyPreview:
           tag: {fileID: 11400000, guid: 643622cf4629f974f807157b6df550ce, type: 2}
           property:
-            value: 70
+            value: 80
             onValueChanged:
               debugGameEvent: 0
               onEventRaised:
@@ -4375,7 +4391,7 @@ MonoBehaviour:
       propertyPreview:
         tag: {fileID: 11400000, guid: f6b7b664b8c9350438810f99b93af1a6, type: 2}
         property:
-          value: 200
+          value: 130
           onValueChanged:
             debugGameEvent: 0
             onEventRaised:

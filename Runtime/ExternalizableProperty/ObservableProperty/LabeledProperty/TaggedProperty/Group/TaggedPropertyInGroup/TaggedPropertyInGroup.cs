@@ -11,7 +11,6 @@ namespace HyperGnosys.Core
             = new ExternalReference<ITaggedPropertyGroup<PropertyGroupType>>();
         [SerializeField] private PropertyTag tag;
         [SerializeField] private TaggedProperty<PropertyGroupType> propertyPreview;
-        private TaggedProperty<PropertyGroupType> property = null;
 
         public void OnBeforeSerialize()
         {
@@ -20,7 +19,7 @@ namespace HyperGnosys.Core
                 propertyPreview = null;
                 return;
             }
-            propertyPreview = propertyGroup.Reference.GetPropertyByTag(tag);
+            propertyPreview = propertyGroup.Reference[tag];
         }
 
         public void OnAfterDeserialize()
@@ -31,11 +30,7 @@ namespace HyperGnosys.Core
         {
             get
             {
-                if(property == null)
-                {
-                    property = propertyGroup.Reference.GetPropertyByTag(tag);
-                }
-                return property;
+                return propertyGroup.Reference[tag];
             }
         }
     }

@@ -2,6 +2,6 @@ namespace HyperGnosys.Core
 {
     public interface ITaggedPropertyGroup<PropertyType>
     {
-        TaggedProperty<PropertyType> GetPropertyByTag(PropertyTag tag);
+        TaggedProperty<PropertyType> this[PropertyTag key] { get; set; }
     }
 }
