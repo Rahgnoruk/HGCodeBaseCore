@@ -9,7 +9,7 @@ namespace HyperGnosys.Core
         [SerializeField] private bool debugExternalizableTaggedProperty = false;
         [SerializeField] private bool useExternalProperty = false;
         [SerializeField] private NamedProperty<ContainedType> localProperty = new NamedProperty<ContainedType>();
-        [SerializeField] private TaggedPropertyInGroup<ContainedType> externalProperty;
+        [SerializeField] private TaggedPropertyInGroup<ContainedType> propertyInGroup;
         public string Label
         {
             get
@@ -17,7 +17,7 @@ namespace HyperGnosys.Core
                 if (useExternalProperty)
                 {
                     HGDebug.Log($"Accessing External Tagged Property", debugExternalizableTaggedProperty);
-                    return externalProperty.ReferencedProperty.Tag.name;
+                    return propertyInGroup.ReferencedProperty.Tag.name;
                 }
                 else
                 {
@@ -32,7 +32,7 @@ namespace HyperGnosys.Core
                 if (useExternalProperty)
                 {
                     HGDebug.Log($"Accessing External Tagged Property", debugExternalizableTaggedProperty);
-                    return externalProperty.ReferencedProperty.Value;
+                    return propertyInGroup.ReferencedProperty.Value;
                 }
                 else
                 {
@@ -43,7 +43,7 @@ namespace HyperGnosys.Core
             {
                 if (useExternalProperty)
                 {
-                    externalProperty.ReferencedProperty.Value = value;
+                    propertyInGroup.ReferencedProperty.Value = value;
                 }
                 else
                 {
@@ -55,7 +55,7 @@ namespace HyperGnosys.Core
         {
             if (useExternalProperty)
             {
-                externalProperty.ReferencedProperty.AddListener(listener);
+                propertyInGroup.ReferencedProperty.AddListener(listener);
             }
             else
             {
@@ -66,7 +66,7 @@ namespace HyperGnosys.Core
         {
             if (useExternalProperty)
             {
-                externalProperty.ReferencedProperty.RemoveListener(listener);
+                propertyInGroup.ReferencedProperty.RemoveListener(listener);
             }
             else
             {
@@ -77,7 +77,7 @@ namespace HyperGnosys.Core
         {
             if (useExternalProperty)
             {
-                externalProperty.ReferencedProperty.AddListener(listener);
+                propertyInGroup.ReferencedProperty.AddListener(listener);
             }
             else
             {
@@ -88,7 +88,7 @@ namespace HyperGnosys.Core
         {
             if (useExternalProperty)
             {
-                externalProperty.ReferencedProperty.RemoveListener(listener);
+                propertyInGroup.ReferencedProperty.RemoveListener(listener);
             }
             else
             {
