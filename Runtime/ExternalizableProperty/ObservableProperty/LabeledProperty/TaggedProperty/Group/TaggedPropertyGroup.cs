@@ -9,7 +9,7 @@ namespace HyperGnosys.Core
         ISerializationCallbackReceiver, 
         ITaggedPropertyGroup<PropertyType>
     {
-        [SerializeField] private TaggedProperty<PropertyType>[] properties;
+        [SerializeField] private TaggedProperty<PropertyType>[] properties = new TaggedProperty<PropertyType>[0];
 
         //After serialization is done, load the array that survived serialization
         //into the dictionary so it can be used.
