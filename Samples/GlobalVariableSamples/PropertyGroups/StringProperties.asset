@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: StringProperties
   m_EditorClassIdentifier: 
   propertyGroup:
-    list:
+    properties:
     - tag: {fileID: 11400000, guid: 45fabaf39f120b746b20894be766c50d, type: 2}
       property:
         value: Test
         onValueChanged:
-          debugging: 0
+          debugGameEvent: 0
           onEventRaised:
             m_PersistentCalls:
               m_Calls: []

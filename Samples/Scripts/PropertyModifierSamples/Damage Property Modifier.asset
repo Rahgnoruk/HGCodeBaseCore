@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26f449603f84ae94396cd254317b4deb, type: 3}
+  m_Name: Damage Property Modifier
+  m_EditorClassIdentifier: 
+  modifier:
+    reduceAmount: 10
+    addAmount: 10
+    property:
+      debugExternalizableTaggedProperty: 0
+      useExternalProperty: 1
+      localProperty:
+        name: 
+        property:
+          value: 0
+          onValueChanged:
+            debugGameEvent: 0
+            onEventRaised:
+              m_PersistentCalls:
+                m_Calls: []
+      propertyInGroup:
+        propertyGroup:
+          referenceObject: {fileID: 11400000, guid: 5e19f7af71bf22e488d81da19310760c, type: 2}
+        tag: {fileID: 11400000, guid: ccc83a9e4ea6acc48aca85e42fd14813, type: 2}
+        propertyPreview:
+          tag: {fileID: 11400000, guid: ccc83a9e4ea6acc48aca85e42fd14813, type: 2}
+          property:
+            value: 80
+            onValueChanged:
+              debugGameEvent: 0
+              onEventRaised:
+                m_PersistentCalls:
+                  m_Calls: []
