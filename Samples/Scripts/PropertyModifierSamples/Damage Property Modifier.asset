@@ -27,23 +27,14 @@ MonoBehaviour:
             onEventRaised:
               m_PersistentCalls:
                 m_Calls: []
-      externalProperty:
+      propertyInGroup:
         propertyGroup:
           referenceObject: {fileID: 11400000, guid: 5e19f7af71bf22e488d81da19310760c, type: 2}
         tag: {fileID: 11400000, guid: ccc83a9e4ea6acc48aca85e42fd14813, type: 2}
         propertyPreview:
           tag: {fileID: 11400000, guid: ccc83a9e4ea6acc48aca85e42fd14813, type: 2}
           property:
-            value: 20
-            onValueChanged:
-              debugGameEvent: 0
-              onEventRaised:
-                m_PersistentCalls:
-                  m_Calls: []
-        property:
-          tag: {fileID: 0}
-          property:
-            value: 0
+            value: 80
             onValueChanged:
               debugGameEvent: 0
               onEventRaised:

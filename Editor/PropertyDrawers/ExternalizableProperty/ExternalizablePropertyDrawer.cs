@@ -2,12 +2,13 @@ using UnityEditor;
 using UnityEngine;
 namespace HyperGnosys.Core
 {
-    public class ExternalizableProperty : PropertyDrawer
+    public class ExternalizablePropertyDrawer : PropertyDrawer
     {
         const float lineHeight = 16;
         const float margin = 20;
         private SerializedProperty serializedProperty;
-        private bool useExternalProperty = false;
+        protected bool useExternalProperty = false;
+        protected string externalReferenceName = "externalProperty";
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             EditorGUI.BeginProperty(position, label, property);
@@ -40,7 +41,7 @@ namespace HyperGnosys.Core
             }
             else
             {
-                selectedProperty = property.FindPropertyRelative("externalProperty");
+                selectedProperty = property.FindPropertyRelative(externalReferenceName);
                 GUIContent externalPropertyLabel = new GUIContent("External Property");
                 EditorGUI.PropertyField(propertyRect, selectedProperty, externalPropertyLabel, true);
             }
@@ -83,7 +84,7 @@ namespace HyperGnosys.Core
             }
             else
             {
-                drawnProperty = property.FindPropertyRelative("externalProperty");
+                drawnProperty = property.FindPropertyRelative(externalReferenceName);
             }
             return EditorGUI.GetPropertyHeight(drawnProperty, true);
         }
