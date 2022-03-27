@@ -5,6 +5,7 @@ namespace HyperGnosys.Core
 {
     public interface IObservableList<ContainedType>
     {
+        int Count { get; }
         void Add(ContainedType item);
         void Remove(ContainedType item);
         void RemoveAt(int index);

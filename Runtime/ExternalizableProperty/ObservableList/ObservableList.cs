@@ -13,6 +13,7 @@ namespace HyperGnosys.Core
         [SerializeField] private UnityEvent<ContainedType> onItemRemoved = new UnityEvent<ContainedType>();
         [SerializeField] private UnityEvent onListCleared = new UnityEvent();
         [SerializeField] private UnityEvent onListReassigned = new UnityEvent();
+        public int Count { get => list.Count; }
         public void Add(ContainedType item)
         {
             list.Add(item);
