@@ -7,6 +7,7 @@ namespace HyperGnosys.Core
     public class AObservableListComponent<ContainedType> : MonoBehaviour, IObservableList<ContainedType>
     {
         [SerializeField] private ObservableList<ContainedType> observableList = new ObservableList<ContainedType>();
+        public int Count { get => observableList.Count; }
         public void Add(ContainedType item)
         {
             observableList.List.Add(item);
