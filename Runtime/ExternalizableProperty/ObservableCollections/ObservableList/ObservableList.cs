@@ -19,6 +19,10 @@ namespace HyperGnosys.Core
             list.Add(item);
             onItemAdded.Invoke(item);
         }
+        public bool Contains(ContainedType item)
+        {
+            return list.Contains(item);
+        }
         public void Remove(ContainedType item)
         {
             list.Remove(item);
