@@ -12,6 +12,10 @@ namespace HyperGnosys.Core
         {
             observableList.List.Add(item);
         }
+        public bool Contains(ContainedType item)
+        {
+            return observableList.Contains(item);
+        }
         public void Remove(ContainedType item)
         {
             observableList.Remove(item);

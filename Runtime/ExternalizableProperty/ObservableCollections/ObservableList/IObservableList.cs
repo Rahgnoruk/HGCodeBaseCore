@@ -7,6 +7,7 @@ namespace HyperGnosys.Core
     {
         int Count { get; }
         void Add(ContainedType item);
+        bool Contains(ContainedType item);
         void Remove(ContainedType item);
         void RemoveAt(int index);
         void Clear();
