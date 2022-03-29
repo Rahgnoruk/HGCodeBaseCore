@@ -12,15 +12,6 @@ namespace HyperGnosys.Core
             HGDebug.Log($"Raising event in {transform.name}", gameEvent.Debugging);
             gameEvent.Raise(item);
         }
-
-        public void AddListener(IGameEventListener<T> listener)
-        {
-            gameEvent.AddListener(listener);
-        }
-        public void RemoveListener(IGameEventListener<T> listener)
-        {
-            gameEvent.RemoveListener(listener);
-        }
         public void AddListener(UnityAction<T> listener)
         {
             gameEvent.AddListener(listener);

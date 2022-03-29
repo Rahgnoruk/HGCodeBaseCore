@@ -17,15 +17,6 @@ namespace HyperGnosys.Core
                 onValueChanged?.Raise(value);
             }
         }
-
-        public void AddListener(IGameEventListener<ContainedType> listener)
-        {
-            onValueChanged.AddListener(listener);
-        }
-        public void RemoveListener(IGameEventListener<ContainedType> listener)
-        {
-            onValueChanged.RemoveListener(listener);
-        }
         public void AddListener(UnityAction<ContainedType> listener)
         {
             onValueChanged.AddListener(listener);

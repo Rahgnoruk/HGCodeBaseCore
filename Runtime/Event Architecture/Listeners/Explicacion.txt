@@ -1,7 +1,0 @@
-Los listeners tienen que poner explícitamente si escuchan un GameEvent o un ScriptableGameEvent para que se serialice en el Inspector
-
-RECUERDA USAR EL METODO DE HASTA ARRIBA, EN LA SECCION DE DYNAMIC
-
-Para que el UnityEvent se encargue de pasar el argumento al metodo que ingreses como 
-parte de la respuesta, tienes que ir hasta arriba en el dropdown de los metodos del
-Monobehaviour y seleccionar el que creaste en la seccion de Dynamic

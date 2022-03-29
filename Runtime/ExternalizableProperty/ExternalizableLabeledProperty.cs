@@ -51,28 +51,6 @@ namespace HyperGnosys.Core
                 }
             }
         }
-        public void AddListener(IGameEventListener<ContainedType> listener)
-        {
-            if (useExternalProperty)
-            {
-                propertyInGroup.ReferencedProperty.AddListener(listener);
-            }
-            else
-            {
-                localProperty.AddListener(listener);
-            }
-        }
-        public void RemoveListener(IGameEventListener<ContainedType> listener)
-        {
-            if (useExternalProperty)
-            {
-                propertyInGroup.ReferencedProperty.RemoveListener(listener);
-            }
-            else
-            {
-                localProperty.RemoveListener(listener);
-            }
-        }
         public void AddListener(UnityAction<ContainedType> listener)
         {
             if (useExternalProperty)

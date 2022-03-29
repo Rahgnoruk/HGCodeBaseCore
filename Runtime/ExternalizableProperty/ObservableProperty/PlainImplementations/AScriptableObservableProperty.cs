@@ -13,14 +13,6 @@ namespace HyperGnosys.Core
             get => globalProperty.Value;
             set => globalProperty.Value = value;
         }
-        public void AddListener(IGameEventListener<ContainedType> listener)
-        {
-            globalProperty.AddListener(listener);
-        }
-        public void RemoveListener(IGameEventListener<ContainedType> listener)
-        {
-            globalProperty.RemoveListener(listener);
-        }
         public void AddListener(UnityAction<ContainedType> listener)
         {
             globalProperty.AddListener(listener);
